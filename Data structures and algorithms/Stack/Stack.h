@@ -19,7 +19,7 @@ public:
         pop returns the element and removes it from the array,
         if empty print an appropriate message and exit the program
     */
-    T &pop();
+    T pop();
     /*
         utility function, returns the top element
     */
