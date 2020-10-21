@@ -1,17 +1,17 @@
-#include "../stack/linkedListRepresentation/Stack.cpp"
+#include <stack>
 #include <iostream>
 
 template <typename T>
 class StackWithMax
 {
-    Stack<T> mainStack;
-    Stack<T> trackStack;
+    std::stack<T> mainStack;
+    std::stack<T> trackStack;
 
 public:
     void push(T x)
     {
         mainStack.push(x);
-        if (mainStack.getSize() == 1)
+        if (mainStack.size() == 1)
         {
             trackStack.push(x);
             return;
