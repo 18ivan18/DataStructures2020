@@ -2,21 +2,21 @@
 #include "Square.h"
 #include "Line.h"
 
-Square::Square(SDL_Renderer* _renderer, double _x, double _y, int _side, unsigned char _r, unsigned char _g, unsigned char _b) :
-		Point(_renderer, _x, _y, Color(_r, _g, _b)), side(_side)
+Square::Square(SDL_Renderer* _renderer, const Color& _color, double _x, double _y, int _side) :
+		Point(_renderer, _color, _x, _y), side(_side)
 {
 }
 
 void Square::draw()
 {
-	Point topRight = Point(getRenderer(),this->getX() + side, this->getY(), getColor()),
-		botLeft = Point(getRenderer(), this->getX(), this->getY() + side, getColor()),
-		botRight = Point(getRenderer(), this->getX() + side, this->getY() + side, getColor());
+	Point topRight = Point(getRenderer(), getColor(),this->getX() + side, this->getY()),
+		botLeft = Point(getRenderer(), getColor(), this->getX(), this->getY() + side),
+		botRight = Point(getRenderer(), getColor(), this->getX() + side, this->getY() + side);
 
-	Line top = Line(getRenderer(), *this, topRight, getColor()),
-		left = Line(getRenderer() , *this, botLeft, getColor()),
-		bot = Line(getRenderer(), botLeft, botRight, getColor()),
-		right = Line(getRenderer(), botRight, topRight, getColor());
+	Line top = Line(getRenderer(), getColor() , *this, topRight),
+		left = Line(getRenderer() , getColor() , *this, botLeft),
+		bot = Line(getRenderer(), getColor(), botLeft, botRight),
+		right = Line(getRenderer(), getColor(), botRight, topRight);
 
 	top.draw();
 	left.draw();

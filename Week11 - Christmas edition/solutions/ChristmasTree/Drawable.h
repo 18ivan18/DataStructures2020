@@ -1,15 +1,19 @@
 #pragma once
 #include <SDL_render.h>
+#include "Color.h"
 
-class IDrawable
+class Drawable
 {
 private:
 	SDL_Renderer* SDLRender;
+	Color color;
 public:
-	IDrawable(SDL_Renderer* _renderer);
+	Drawable(SDL_Renderer* _renderer, Color _color = Color(0, 0, 0));
 	SDL_Renderer* getRenderer();
+	Color getColor() const;
+	void colorize();
 	virtual void draw() = 0;
-	virtual ~IDrawable();
+	virtual ~Drawable();
 };
 
 #define setColor(r,g,b) SDL_SetRenderDrawColor(getRenderer(),r,g,b,SDL_ALPHA_OPAQUE);

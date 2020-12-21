@@ -1,8 +1,9 @@
 #pragma once
 #include "Square.h"
+#include "Transformation.h"
 #include "Triangle.h"
 
-class ChristmasTree : public IDrawable
+class ChristmasTree : public Drawable
 {
 private:
 	Triangle body;

@@ -159,21 +159,23 @@
   <ItemGroup>
     <ClCompile Include="ChristmasTree.cpp" />
     <ClCompile Include="Color.cpp" />
-    <ClCompile Include="IDrawable.cpp" />
+    <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Square.cpp" />
+    <ClCompile Include="Transformation.cpp" />
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChristmasTree.h" />
     <ClInclude Include="Color.h" />
-    <ClInclude Include="IDrawable.h" />
+    <ClInclude Include="Drawable.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="mygraphics.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Square.h" />
+    <ClInclude Include="Transformation.h" />
     <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

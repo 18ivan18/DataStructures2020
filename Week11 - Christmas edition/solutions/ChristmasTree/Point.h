@@ -1,28 +1,18 @@
 #pragma once
 #include "Color.h"
-#include "IDrawable.h"
+#include "Drawable.h"
 
-struct Transformation
-{
-	double scaleX;
-	double scaleY;
-	double translateX;
-	double translateY;
-};
-
-class Point : public IDrawable
+class Point : public Drawable
 {
 private:
 	double x;
 	double y;
-	Color color;
 public:
-	Point(SDL_Renderer* _renderer, double _x, double _y, const Color& _color = Color());
+	Point(SDL_Renderer* _renderer, const Color& _color, double _x, double _y);
+	void setX(double _x);
+	void setY(double _y);
 	double getX() const;
 	double getY() const;
-	Color getColor() const;
-	void transform(const Transformation& transformation);
-	void colorize();
 	void draw() override;
 	~Point() override;
 };
