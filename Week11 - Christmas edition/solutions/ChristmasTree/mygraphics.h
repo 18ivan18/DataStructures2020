@@ -12,6 +12,7 @@ http://www.willusher.io/sdl2%20tutorials/2013/08/15/lesson-0-visual-studio/
 
 #include <SDL.h>
 #include <cassert>
+#include <iostream>
 
 //global variables for SLD window and renderer
 SDL_Window* SDLWin = 0;
@@ -31,15 +32,10 @@ void SDLStart() {
 	SDL_RenderClear(SDLRen);
 };
 
-#define setColor(r,g,b) SDL_SetRenderDrawColor(SDLRen,r,g,b,SDL_ALPHA_OPAQUE);
-#define drawPixel(x,y) SDL_RenderDrawPoint(SDLRen,x,y);
-#define drawLine(x1,y1,x2,y2) SDL_RenderDrawLine(SDLRen,x1,y1,x2,y2);
-
 #define updateGraphics() SDL_RenderPresent(SDLRen);
 
 void SDLEnd()
 {
-
 	SDL_DestroyRenderer(SDLRen);
 	SDL_DestroyWindow(SDLWin);
 	SDL_Quit();
